@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap');
 
-.container > div {
-    display: inline-block;
-    display: -moz-inline-box;
-    *display: inline; /* For IE7 */
-    zoom: 1; /* Trigger hasLayout */
-    width: 33%;
-    text-align: center;
+
+iframe{
+    width: 800px;
+    height: 400px;
 }
 
 #transBack {
@@ -20,6 +17,11 @@
 
 }
 
+.wrapper{
+    margin-right: 12%;
+    margin-left: 0;
+}
+
 textarea{
     display: block;
     margin-left: auto;
@@ -27,7 +29,7 @@ textarea{
     background-color: rgb(0, 255, 0);
     box-sizing: border-box;
     color: rgb(153, 0, 204);
-    font-family: 'ZCOOL KuaiLe';
+    font-family: 'ZCOOL KuaiLe', sans-serif;
     transition: width 0.4s ease-in-out;
     border-color: rgb(153, 0, 204);
 }
@@ -51,7 +53,7 @@ input[type=submit]{
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-    font-family: 'ZCOOL KuaiLe';
+    font-family: 'ZCOOL KuaiLe', sans-serif;
 }
 
 input[type=number] {
@@ -61,24 +63,26 @@ input[type=number] {
     box-sizing: border-box;
     background-color: rgb(0, 255, 0);
     color: rgb(153, 0, 204);
-    font-family: 'ZCOOL KuaiLe';
+    font-family: 'ZCOOL KuaiLe', sans-serif;
     transition: width 0.4s ease-in-out;
     border-color: rgb(153, 0, 204);
 }
 
 input[type=text]:focus {
-    width: 100%;
+    width: 30%;
 }
 
 
 p{
+    font-size: 16px;
     line-height: 20px;
     text-align: center;
 }
 
 table{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
+    font-size: 18px;
 }
 
 .grid-container{
@@ -114,7 +118,7 @@ table{
 .top {
     grid-area: header;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
-    font-size: 40px;
+    font-size: 60px;
     color: crimson;
 }
 
@@ -134,14 +138,16 @@ table{
     grid-area: rightBottom;
 }
 
+
 .bottom {
+    display: inline-block;
     font-size: 18px;
     grid-area: footer;
 }
 
 body{
     background-image: url("/vinyler.jpg ");
-    font-family: 'ZCOOL KuaiLe';
+    font-family: 'ZCOOL KuaiLe', sans-serif;
     color: rgb(0, 255, 0);
 }
 
@@ -170,7 +176,10 @@ a:hover {
     color: crimson;
 }
 
-.bild{}
+.bild{
+    max-width: 500px;
+    height: auto;
+}
 
 a:active {
     color: coral;
@@ -178,13 +187,11 @@ a:active {
 
 
 /* Mobile */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 767px) {
     .grid-container{
         width: 100%;
-        max-width: 200px;
         display: grid;
         grid-gap: 15px;
-        padding: 15px;
         text-align: center;
         grid-template-areas:
             'header '
@@ -194,17 +201,47 @@ a:active {
             'rightBottom'
             'footer';
     }
+    p{
+        font-size: 13px;
+    }
+
+    .leftBottom{
+        max-width: 85%;
+    }
+
+    .top{
+        font-size: 25px;
+    }
+
+    table{
+        font-size: 13px;
+    }
+
+    .rightTop{
+        max-width: 85%;
+    }
+
+    .bottom{
+        max-width: 85%;
+    }
 
     .bild{
         max-width: 100%;
         height: auto;
     }
 
-}
-/* Desktop */
-@media screen and (min-width: 1025px) {
-    body{
-
+    iframe{
+        text-align: center;
+        height: auto;
+        width: 90%;
     }
+
+}
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body{
+        background: greenyellow;
+    }
+
 
 }
