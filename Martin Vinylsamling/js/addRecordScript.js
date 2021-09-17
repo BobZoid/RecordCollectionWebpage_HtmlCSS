@@ -19,8 +19,80 @@ document.getElementById("enKnapp").onclick = function addRecord() {
         Songlist: songlist.value
     };
 
-    collection.push(newRecord);
-    console.log(JSON.stringify(collection));
+    if (newRecord.Artist!== "" && newRecord.Album!== "" && newRecord.Tracks!=="") {
+
+        collection.push(newRecord);
+        let jsonCollection = JSON.stringify(collection);
+
+        localStorage.setItem("recordCollection", jsonCollection);
+
+
+
+        showRecords(newRecord.Artist, newRecord.Album);
+    } else {
+        alert("Yngwie says: \"YOU BROUGHT ON THE FUCKING FURAY BY NOT FILLING IN ALL REQUIRED FIELDS!!!\"");
+
+    }
+    return false;
+}
+
+
+function showRecords(artist, album) {
+    const table = document.querySelector("section").querySelector("table");
+    let row = table.insertRow(1);
+    let artistCell = row.insertCell(0);
+    let albumCell = row.insertCell(1);
+    artistCell.innerHTML = artist;
+    albumCell.innerHTML = album;
+}
+
+/*
+    const recordList = document.createElement("ul");
+
+
+    for (let i = 0; i < localRecords.length; i++) {
+        const singleRecord = document.createElement("li")
+        console.log(localRecords[i].Artist + "-" + localRecords[i].Album);
+        singleRecord.textContent = localRecords[i].Artist + "-" + localRecords[i].Album;
+        recordList.appendChild(singleRecord);
+    }
+
+    table.appendChild(recordList)
+    section.appendChild(table);
+
+    }
+
+
+    function fetchJSON() {
+
+        let jsonData;
+//under detta!!!
+        fetch("http://localhost")
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                jsonData = data;
+            });
+
+        return jsonData;
+    }
+
+
+
+    return false }
+
+
+
+
+
+/*
+    outputForm.setAttribute('style', 'white-space: pre;');
+    outputForm.textContent = "Recipe " + recipe.Name + " Successfully Added";
+    displayAddedRecipes(storedRecipes);
+
+
+    document.getElementById("formReg").reset();
 
     return false;
 

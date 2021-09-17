@@ -8,28 +8,37 @@
 </head>
 <body>
 
-<div class="grid-simple">
+<div class="grid-container">
     <div class="top">Add New Record</div>
-    <div class="leftTop"><form id="myForm">
+    <article class="leftTop"><form id="myForm">
         <label for="artistName">Artist Name:</label>
-        <p><input type="text" name="artistName" size="25" id="artistName" required value="Hellacopters"></p>
+        <p><input type="text" name="artistName" size="25" id="artistName" required ></p>
         <label for="albumName">Album Name:</label>
-        <p><input type="text" name="albumName" size="25" id="albumName" required value="High Visibility"></p>
+        <p><input type="text" name="albumName" size="25" id="albumName" required ></p>
         <label for="songAmount">Amount of tracks on album:</label>
         <p><input type="number" name="songAmount" size="25" id="songAmount" required value=14></p>
         <label for="youTubeLink">YouTube Link:</label>
-        <p><input type="text" name="youTubeLink" size="25" id="youTubeLink" value="https://www.youtube.com/embed/V_Ph6OKIirc"></p>
+        <p><input type="text" name="youTubeLink" size="25" id="youTubeLink"></p>
         <p><label for="review">Review</label></p>
         <textarea rows="4" cols="20" id="review"></textarea>
         <p><label for="songlist">Song List</label></p>
-        <textarea rows="4" cols="20" id="songlist" ></textarea>
+        <textarea rows="4" cols="20" id="songlist"></textarea>
          <input type="submit" name="addRecord" value="Add Record" id="enKnapp">
-    </form> </div>
+    </form> </article>
+    <section class="rightTop" id="transBack">
+        <table class="addedRecords">
+            <tr>
+                <th colspan="2">Added Records</th>
+            </tr>
+
+        </table>
+    </section>
 
     <div id="transBack" class="bottom"><div class="container">
         <div><a href="index.html">Back</a></div>
     </div></div>
 </div>
+
 
 <script src="js/addRecordScript.js">
 </script>
