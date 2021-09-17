@@ -119,12 +119,9 @@ table{
     padding: 15px;
     text-align: center;
     grid-template-areas:
-            'header '
-            'leftTop'
-            'rightTop'
-            'leftBottom'
-            'rightBottom'
-            'footer';
+            'header header'
+            'leftTop rightTop'
+            'footer footer';
 }
 
 .top {
@@ -213,6 +210,19 @@ a:active {
             'rightBottom'
             'footer';
     }
+
+    .grid-simple{
+        width: 100%;
+        display: grid;
+        grid-gap: 15px;
+        text-align: center;
+        grid-template-areas:
+            'header '
+            'leftTop'
+            'rightTop'
+            'footer';
+    }
+
     p{
         font-size: 13px;
     }
@@ -276,6 +286,20 @@ a:active {
             'leftBottom leftBottom rightTop rightTop'
             'leftBottom leftBottom rightTop rightTop'
             'footer footer footer footer';
+    }
+
+    .grid-simple{
+        width: 750px;
+        display: grid;
+        grid-gap: 15px;
+        text-align: center;
+        grid-template-areas:
+            'header '
+            'leftTop'
+            'rightTop'
+            'leftBottom'
+            'rightBottom'
+            'footer';
     }
 
     table{
