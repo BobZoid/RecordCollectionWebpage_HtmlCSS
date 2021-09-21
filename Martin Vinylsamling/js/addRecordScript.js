@@ -9,6 +9,8 @@ const songlist = document.querySelector("#songlist");
 
 let collection = [];
 
+
+
 document.getElementById("enKnapp").onclick = function addRecord() {
     let newRecord = {
         Artist: artistName.value,
@@ -25,6 +27,7 @@ document.getElementById("enKnapp").onclick = function addRecord() {
         let jsonCollection = JSON.stringify(collection);
 
         localStorage.setItem("recordCollection", jsonCollection);
+
 
 
 
@@ -45,3 +48,41 @@ function showRecords(artist, album) {
     artistCell.innerHTML = artist;
     albumCell.innerHTML = album;
 }
+
+
+fetch('json/collection.json').then(function(response) {
+            return response.json();
+        }).then(function(json) {
+            let popular = json;
+            const table = document.querySelector("text").querySelector("table");
+            let row1 = table.insertRow(1);
+            let row2 = table.insertRow(2);
+            let row3 = table.insertRow(3);
+            let row4 = table.insertRow(4);
+            let row5 = table.insertRow(5);
+            let row6 = table.insertRow(6);
+            let artist = row1.insertCell(0);
+            artist.innerHTML = "Artist:";
+            let artistName = row1.insertCell(1);
+            artistName.innerHTML = popular.Artist;
+            let album = row2.insertCell(0);
+            let albumName = row2.insertCell(1);
+            album.innerHTML = "Album:";
+            albumName.innerHTML = popular.Album;
+            let tracks = row3.insertCell(0);
+            let tracksAmount = row3.insertCell(1);
+            tracks.innerHTML = "Tracks on record";
+            tracksAmount.innerHTML = popular.Tracks;
+            let youTube = row4.insertCell(0);
+            let link = row4.insertCell(1);
+            youTube.innerHTML = "Youtube Link:";
+            link.innerHTML = popular.Youtube;
+            let review = row5.insertCell(0);
+            let reviewData = row5.insertCell(1);
+            review.innerHTML = "Review:";
+            reviewData.innerHTML = popular.About;
+            let tracklist = row6.insertCell(0);
+            let trackdata = row6.insertCell(1);
+            tracklist.innerHTML = "Track List:";
+            trackdata.innerHTML = popular.Songlist;
+        });

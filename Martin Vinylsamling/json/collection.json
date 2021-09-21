@@ -1,7 +1,10 @@
 {
-  "artistName" : "",
-  "homeTown" : "",
-  "formed" : 2016,
-  "secretBase" : "",
-  "active" : "",
-  "members" : ""}
+  "Artist": "Burzum",
+  "Album": "Det Som Engang Var",
+  "Tracks": 8,
+  "Youtube": "https://www.youtube.com/embed/DHj7br0O4iU",
+  "About": "A bit racist to be honest",
+  "Songlist": "1. Den onde kysten 2. Key to the Gate 3. En ring til aa herske 4. Lost Wisdom 5. Han som reiste 6. Naar himmelen klarner 7. Snu mikrokosmos tegn 8. Svarte troner"
+
+
+}
